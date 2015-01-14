@@ -1,0 +1,19 @@
+- default_hesh_xeditable = { "data-model" => "post", "data-pk" => @post.id, "data-title" => "Введите новое значение", "data-url" => post_url(@post),"data-xeditable" => "true", :href => "#" }
+
+%br
+%br
+%br
+%br
+%br
+
+%p
+  %strong Заголовок:
+  %a.editable{ default_hesh_xeditable, "data-name" => "title" }
+    = @post.title
+%p
+  %strong Текст:
+  %a.editable{ default_hesh_xeditable, "data-name" => "body" }
+    = @post.body
+%p
+  %button#editable_on_of.btn.btn-default Редактор (вкл/выкл)
+  = link_to 'Все посты', posts_path, class: 'btn btn-default'
